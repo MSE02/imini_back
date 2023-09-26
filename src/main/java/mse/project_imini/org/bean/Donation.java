@@ -1,12 +1,12 @@
 package mse.project_imini.org.bean;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 public class Donation {
@@ -17,6 +17,24 @@ public class Donation {
     private String l_name;
     private String email;
     private BigDecimal amount;
+    private String verificationCode;
+    private LocalDateTime verificationCodeExpirationTime;
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
+    public LocalDateTime getVerificationCodeExpirationTime() {
+        return verificationCodeExpirationTime;
+    }
+
+    public void setVerificationCodeExpirationTime(LocalDateTime verificationCodeExpirationTime) {
+        this.verificationCodeExpirationTime = verificationCodeExpirationTime;
+    }
 
     public Long getId() {
         return id;
